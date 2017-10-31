@@ -1,10 +1,11 @@
 # Overview
 
-Just an Ubuntu image with not much else running.
+Just an Ubuntu image with not much else running, but allows you to test how
+leadership election is working.
 
 # Usage
 
-juju deploy ubuntu-lite
+juju deploy ubuntu-leader
 
 ## Known Limitations and Issues
 

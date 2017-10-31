@@ -1,0 +1,12 @@
+#!/bin/bash
+
+x=$(leader-get x)
+leader=$(leader-get leader)
+if is-leader; then
+    ((x=$x+1))
+    leader-set x=$x leader=$JUJU_UNIT_NAME
+    leader=$JUJU_UNIT_NAME
+    status-set active "l-e leader: leader=$leader x=$x"
+else
+    juju-log --log-level WARNING "leader-elected called for $JUJU_UNIT_NAME but is-leader returned false"
+fi

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+x=$(leader-get x)
+leader=$(leader-get leader)
+if is-leader; then
+    status-set active "l-s-c leader: leader=$leader x=$x"
+else
+    status-set active "l-s-c other: leader=$leader x=$x"
+fi
